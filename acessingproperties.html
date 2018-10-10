@@ -1,0 +1,36 @@
+<!Doctype HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>accessing properites</title>
+    </head>
+<body>
+    <p id="greeting">
+        Hello
+    </p>
+    <input id="userName" type="input" placeholder="Your Name:">
+    <button onclick="displayGreeting()">Click Button</button>  <!-- Calls function when clicked-->
+    <script>
+
+        function displayGreeting() {
+            var theName;
+            var theGreeting;
+            theName = document.getElementById('userName');
+            theGreeting = document.getElementById('greeting');
+            //theGreeting.innerHTML = "Hello " + theName;
+            //theName.value = "Updated";
+
+            if (theName.value == "") {                    // If the name is empty
+                theName.placeholder = "enter your name!"; // Script will prompt user
+                theName.style.color = "red";              // this dispalys text in box red
+                theGreeting.innerHTML= "Whoops";         // Greeting will be displayed as Whoops
+                
+            }else{
+                theGreeting.innerHTML= "Hello " + theName.value;   // If a name is entered, Hello Name of person!
+            }
+            
+
+        }
+    </script>
+</body>
+</html>
